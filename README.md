@@ -17,6 +17,10 @@ There are two ways to use this Wrapper. The first is straight from the Terminal.
 The other way is to run it from a different location using the colour_control.py script. Set the location of LogiPy in colour_control.py, and then execute commands with the following syntax:
 
 `python colour_control.py Function arguments`
+
+For example:
+`python colour_control.py LightSingleKey F7 100 0 0`
+
 Note that because of limitations of argv, by default any arguments that can be converted to int, will be. For example "1" will be converted to 1. To force the argument
 to be processed as a string. prepend "str" to the argument. For example, "1" would become "str1".
 
