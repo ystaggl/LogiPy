@@ -2,10 +2,14 @@
 An up-to-date Logitech Illumination SDK Wrapper for python!
 
 # Requirements
-Requires Logitech G Hub to be installed.
+Logitech G Hub
+[Logitech Illumination SDK](https://www.logitechg.com/en-us/innovation/developer-lab.html)
+
 
 # Install
-Download Logi.py, LogiLib.py and the DLL file that matches your python installation and put them in the same directory. That's all. (If unsure which DLL to use, you can just download both, the program will detect which one to use),
+Download Logi.py and LogiLib.py from this repo
+
+Place the LED folder from the Logitech Illumination SDK into the same folder as Logi.py and Logilib.py
 
 # Use
 There are two ways to use this Wrapper. The first is straight from the Terminal. Simply open Windows Terminal up in the same folder as Logi.py, open up python and type `import logi`. Now, you can use any command from the Logitech Illumination SDK.
