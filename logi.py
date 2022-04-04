@@ -97,4 +97,4 @@ def exit_handler():
     time.sleep(0.1)
     exec("led.LogiLedShutdown()")
 
-atexit.register(exit_handler)
+#atexit.register(exit_handler)
