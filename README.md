@@ -11,6 +11,8 @@ Download logi.py and logi_lib.py from this repo
 
 Place the LED folder from the Logitech Illumination SDK into the same folder as logi.py and logi_lib.py
 
+Set the LogiPy path in logi.py
+
 (Optional): Place colour_control.py in a different directory, and set the path to LogiPy in the file to interface with LogiPy without being in the same folder. 
 
 # Use
