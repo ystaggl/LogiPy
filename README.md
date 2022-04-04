@@ -11,6 +11,8 @@ Download logi.py and logi_lib.py from this repo
 
 Place the LED folder from the Logitech Illumination SDK into the same folder as logi.py and logi_lib.py
 
+(Optional): Place colour_control.py in a different directory, and set the path to LogiPy in the file to interface with LogiPy without being in the same folder. 
+
 # Use
 There are two ways to use this Wrapper. The first is straight from the Terminal. Simply open Windows Terminal up in the same folder as logi.py, open up python and type `import logi`. Now, you can use any command from the Logitech Illumination SDK.
 
