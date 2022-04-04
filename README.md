@@ -31,4 +31,4 @@ To use commands with Key names, you need only write the key name as a string, fo
 To see the rest of the functions you can use, look at the Logitech Illumination SDK Docs, LogiPy supports all functions in the Logitech Illumination SDK.
 
 # Custom Aliases
-Some of the functions in the Logitech Illumination SDK have very long and cumbersome names. LogiPy let's you easily add custom Aliases. There is a sample Alias (LightSingleKey) already in the Logi.py file which should show you what to do.
+Some of the functions in the Logitech Illumination SDK have very long and cumbersome names. LogiPy let's you easily add custom Aliases. There is a sample Alias (LightSingleKey) already in the logi.py file which should show you what to do.
