@@ -1,7 +1,7 @@
 """
 Logipy: An up-to-date Logitech Illumination SDK Wrapper for python!
 """
-
+logipydir = "C:\\Workspace\\Python\\LogiPy\\"
 import os
 import ctypes
 import logi_lib as lib
@@ -9,9 +9,9 @@ import atexit
 import struct
 import time
 if 8 * struct.calcsize('P') == 64:
-    dll_path = os.getcwd() + "\\Led\\Lib\\LogitechLedEnginesWrapper\\x64\\LogitechLedEnginesWrapper.dll"
+    dll_path = logipydir + "\\Led\\Lib\\LogitechLedEnginesWrapper\\x64\\LogitechLedEnginesWrapper.dll"
 else:
-    dll_path = os.getcwd() + "\\Led\\Lib\\LogitechLedEnginesWrapper\\x86\\LogitechLedEnginesWrapper.dll"
+    dll_path = logipydir + "\\Led\\Lib\\LogitechLedEnginesWrapper\\x86\\LogitechLedEnginesWrapper.dll"
 led = ctypes.WinDLL(dll_path)
 led.LogiLedInit()
 led.LogiLedSetTargetDevice(ctypes.c_int(4)) #Sets device to keyboard
@@ -88,6 +88,10 @@ def parse_and_execute(run_command, *args):
         print(f"An Error has occured. The script attempted to run the command {run_command}. Origin: parse_and_execute")
         return
     print(f"Command succesfully executed: {run_command}")
+    #if str(run_command) == "led.LogiLedSetLightingForKeyWithKeyName(ctypes.c_int(65),ctypes.c_int(100),ctypes.c_int(0),ctypes.c_int(0),ctypes.c_int(0))":
+    f = open("C:\\Workspace\\PiP for MPV\\test.txt","a")
+    f.write(run_command)
+    f.close()
 
 def exit_handler():
     """
