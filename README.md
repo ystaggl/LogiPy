@@ -1,5 +1,5 @@
 # LogiPy
-A Logitech Illumination SDK Wrapper for python!
+An up-to-date Logitech Illumination SDK Wrapper for python!
 
 # Install
 Download Logi.py, LogiLib.py and the DLL file that matches your python installation and put them in the same directory. That's all. (If unsure which DLL to use, you can just download both, the program will detect which one to use),
