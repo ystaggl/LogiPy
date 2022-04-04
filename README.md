@@ -17,7 +17,7 @@ import Logi
 # Syntax
 The syntax is best shown with an example:
 
-To run the function `LogiLedSetLighting(int redPercentage, int greenPercentage, int bluePercentage)`, all you need to do is run `logi.SetLighting(red,green,blue)`, where red, green, and blue are integers from 1-100 representating the percentage of each value in the colour.
+To call the function `LogiLedSetLighting(int redPercentage, int greenPercentage, int bluePercentage)`, all you need to do is run `logi.SetLighting(red,green,blue)`, where red, green, and blue are integers from 1-100 representating the percentage of each value in the colour.
 
 To use commands with Key names, you need only write the key name as a string, for example `logi.SetLightingForKeyWithKeyName["F7",100,0,0]`.
 
