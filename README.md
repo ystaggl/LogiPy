@@ -3,6 +3,7 @@ An up-to-date Logitech Illumination SDK Wrapper for python!
 
 # Requirements
 Logitech G Hub
+
 [Logitech Illumination SDK](https://www.logitechg.com/en-us/innovation/developer-lab.html)
 
 
