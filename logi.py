@@ -4,7 +4,7 @@ Logipy: An up-to-date Logitech Illumination SDK Wrapper for python!
 
 import os
 import ctypes
-import logilib as lib
+import logi_lib as lib
 import atexit
 import struct
 import time
@@ -67,7 +67,7 @@ def parse_and_execute(run_command, *args):
                     arg[1] = "[\'" + arg[1] + "\']"
                     run_command += "ctypes.c_int(" + f"lib.{arg[0]}{arg[1]}" + "),"
                 else:
-                    print(f"Encountered string {arg[0]}, which isn't an attribute of logilib.py. This is probably a bug.")
+                    print(f"Encountered string {arg[0]}, which isn't an attribute of logi_lib.py. This is probably a bug.")
                     return
             else:
                 a = "[\'" + a + "\']"
