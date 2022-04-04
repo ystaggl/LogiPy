@@ -6,7 +6,7 @@ append "str" to it, for example "str1"
 """
 
 import sys
-sys.path.append('C:\Workspace\Python\LogiPy')
+sys.path.append('C:\Example\Path\LogiPy') #Make sure to change this before using the script
 argv = sys.argv
 import logi
 run_command = "logi." + argv[1] + "("
