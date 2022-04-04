@@ -58,21 +58,27 @@ def parse_and_execute(run_command, *args):
     #For Custom Aliases
     if run_command[-1] != "(":
         run_command = "led." + run_command + "("
-        
-    for a in enumerate(args):
+
+    for a in args:
+        print(a)
+        print(type(a))
         if type(a) == type("A"):
+            print("Reached Line 65")
             if " " in a:
                 arg = a.split(" ")
+                print(arg)
                 if hasattr(lib, arg[0]):
                     arg[1] = "[\'" + arg[1] + "\']"
                     run_command += "ctypes.c_int(" + f"lib.{arg[0]}{arg[1]}" + "),"
+                    print(run_command)
                 else:
                     print(f"Encountered string {arg[0]}, which isn't an attribute of logi_lib.py. This is probably a bug.")
                     return
             else:
                 a = "[\'" + a + "\']"
-                run_command += "ctypes.c_int(" + f"lib.KeyName{a}" + "),"
+                run_command += "ctypes.c_int(" + str(lib.KeyName[str(a).strip("'[]'")]) + "),"
                 print("String with no dictionary detected. Assuming dictionary KeyName.")
+            print(run_command)
         if type(a) == type(1):
             run_command += str(f"ctypes.c_int({a})") + ","
     run_command = run_command[:-1] + ")"
@@ -80,7 +86,8 @@ def parse_and_execute(run_command, *args):
         exec(run_command)
     except Exception:
         print(f"An Error has occured. The script attempted to run the command {run_command}. Origin: parse_and_execute")
-    return
+        return
+    print(f"Command succesfully executed: {run_command}")
 
 def exit_handler():
     """
