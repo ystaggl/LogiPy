@@ -16,7 +16,9 @@ led = ctypes.WinDLL(dll_path)
 led.LogiLedInit()
 led.LogiLedSetTargetDevice(ctypes.c_int(4)) #Sets device to keyboard
 
-def LightSingleKey(*args):
+#Sample Alias
+
+def LightSingleKey(*args): #Name the Alias
     """
     Alias for LogiLedSetLightForKeyWithKeyName
     Syntax: 
@@ -24,7 +26,7 @@ def LightSingleKey(*args):
         where keyName is the name of the Key, and red, green, and blue are RGB values out of 100
     """
 
-    run_command = "Led.LogiLedSetLightingForKeyWithKeyName("
+    run_command = "LogiLedSetLightingForKeyWithKeyName" #Define run_command as the function as given by the SDK documentation
     parse_and_execute(run_command, *args)
     return
 
@@ -43,9 +45,9 @@ def __getattr__(command):
                 if "(" in command:
                     return "Error: Missing end bracket"
                 command += "()"
-            exec("Led.LogiLed" + command)
+            exec("led.LogiLed" + command)
             return "Ran Command with no args"
-        run_command = "Led.LogiLed" + command + "("
+        run_command = "led.LogiLed" + command + "("
         parse_and_execute(run_command, *args)
     return method
 
@@ -53,20 +55,23 @@ def parse_and_execute(run_command, *args):
     """
     This function parses and executes the command. Not intended to be called directly, only called by other functions.
     """
-
+    #For Custom Aliases
+    if run_command[-1] != "(":
+        run_command = "led." + run_command + "("
+        
     for a in enumerate(args):
         if type(a) == type("A"):
             if " " in a:
                 arg = a.split(" ")
-                if hasattr(Lib, arg[0]):
+                if hasattr(lib, arg[0]):
                     arg[1] = "[\'" + arg[1] + "\']"
-                    run_command += "ctypes.c_int(" + f"Lib.{arg[0]}{arg[1]}" + "),"
+                    run_command += "ctypes.c_int(" + f"lib.{arg[0]}{arg[1]}" + "),"
                 else:
-                    print(f"Encountered string {arg[0]}, which isn't an attribute of LogiLib.py. This is probably a bug.")
+                    print(f"Encountered string {arg[0]}, which isn't an attribute of logilib.py. This is probably a bug.")
                     return
             else:
                 a = "[\'" + a + "\']"
-                run_command += "ctypes.c_int(" + f"Lib.KeyName{a}" + "),"
+                run_command += "ctypes.c_int(" + f"lib.KeyName{a}" + "),"
                 print("String with no dictionary detected. Assuming dictionary KeyName.")
         if type(a) == type(1):
             run_command += str(f"ctypes.c_int({a})") + ","
@@ -81,8 +86,8 @@ def exit_handler():
     """
     Exit Function, shuts down Logitech Illumination SDK so that it doesn't interfere with other programs.
     """
-    exec("Led.LogiLedSetLighting(0,66,100)") #Workaround for my \ lighting weirdly after closing the SDK.
+    exec("led.LogiLedSetLighting(0,66,100)") #Workaround for my \ lighting weirdly after closing the SDK.
     time.sleep(0.1)
-    exec("Led.LogiLedShutdown()")
+    exec("led.LogiLedShutdown()")
 
 atexit.register(exit_handler)
