@@ -1,7 +1,7 @@
 """
 Logipy: An up-to-date Logitech Illumination SDK Wrapper for python!
 """
-logipydir = "C:\\Workspace\\Python\\LogiPy\\"
+logipydir = "C:\\Example\\Path\\LogiPy\\" #Make sure to set this!
 import os
 import ctypes
 import logi_lib as lib
