@@ -18,7 +18,7 @@ The other way is in another python script. To do this, either put that script in
 ```
 import sys
 sys.path.append('C:\Example\Logi\Path') #Make sure to replace this line with the directory that you put LogiPy in.
-import Logi
+import logi
 ```
 
 # Syntax
