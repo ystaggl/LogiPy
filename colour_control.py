@@ -1,4 +1,4 @@
-﻿"""
+"""
 Colour Control interface for autohotkey/CLI:
 Syntax: python colour_control.py "Function" args
 Automatically assigns types based on if they can be converted to ints. If you need an argument that can be converted to int to be interpreted as a string,
@@ -6,7 +6,7 @@ append "str" to it, for example "str1"
 """
 
 import sys
-sys.path.append('C:\Example\Path\LogiPy') #Make sure to change this before using the script
+sys.path.append('C:\Workspace\Python\LogiPy')
 argv = sys.argv
 import logi
 run_command = "logi." + argv[1] + "("
