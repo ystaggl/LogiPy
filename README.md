@@ -7,12 +7,12 @@ Logitech G Hub
 
 
 # Install
-Download Logi.py and LogiLib.py from this repo
+Download logi.py and logi_lib.py from this repo
 
-Place the LED folder from the Logitech Illumination SDK into the same folder as Logi.py and Logilib.py
+Place the LED folder from the Logitech Illumination SDK into the same folder as logi.py and logi_lib.py
 
 # Use
-There are two ways to use this Wrapper. The first is straight from the Terminal. Simply open Windows Terminal up in the same folder as Logi.py, open up python and type `import logi`. Now, you can use any command from the Logitech Illumination SDK.
+There are two ways to use this Wrapper. The first is straight from the Terminal. Simply open Windows Terminal up in the same folder as logi.py, open up python and type `import logi`. Now, you can use any command from the Logitech Illumination SDK.
 
 The other way is in another python script. To do this, either put that script in the same directory as LogiPy, or include this at the beginning of the py file:
 ```
