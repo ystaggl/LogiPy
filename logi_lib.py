@@ -139,4 +139,3 @@ DeviceType = {
     "Headset": 0x8,
     "Speaker": 0xe
 }
-
